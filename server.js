@@ -256,5 +256,11 @@ app.use("/", (req,res) => {
     res.status(200).json({message:"app is running well"})
 })
 
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
+
 // Export the app as a serverless function
 module.exports = app;
