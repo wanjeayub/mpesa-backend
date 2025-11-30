@@ -244,5 +244,9 @@ app.get('/api/debug/config', (req, res) => {
   });
 });
 
+app.use("/", (req,res) => {
+    res.status(200).json({message:"app is running well"})
+})
+
 // Export the app as a serverless function
 module.exports = app;
