@@ -55,7 +55,7 @@ async function getAccessToken() {
     const auth = base64Encode(credentials);
     
     const response = await axios.get(
-      'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
+      'https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
       {
         headers: {
           'Authorization': `Basic ${auth}`,
@@ -124,7 +124,7 @@ app.post('/api/mpesa/stk-push', async (req, res) => {
     };
 
     const response = await axios.post(
-      'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
+      'https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
       stkPushPayload,
       {
         headers: {
