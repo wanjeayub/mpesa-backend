@@ -253,7 +253,7 @@ app.get('/api/debug/config', (req, res) => {
 });
 
 app.use("/", (req,res) => {
-    res.status(200).json({message:"app is running well"})
+    res.send("app is running well")
 })
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
