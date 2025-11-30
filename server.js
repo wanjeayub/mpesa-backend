@@ -4,6 +4,14 @@ const axios = require('axios');
 
 const app = express();
 
+// use var to prevent future bugs on render
+var __dirname = path.resolve();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+
 // Middleware
 app.use(cors({
   origin: [
